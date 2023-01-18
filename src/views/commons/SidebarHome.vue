@@ -23,7 +23,7 @@ div
     p.sidebar__version Versión: 0.0.0
   </template>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .sidebar {
   background-color: grey;
   box-shadow: -2px 0px 10px 3px rgba(1, 1, 1, 0.2);

@@ -4,7 +4,7 @@ import SidebarHome from '@/views/commons/SidebarHome.vue'
 import HeaderView from '@/views/commons/HeaderView.vue'
 </script>
 <template>
-  <div>
+  <div id="app">
     <div class="contenedor">
       <HeaderView class="header" />
       <div class="main">
