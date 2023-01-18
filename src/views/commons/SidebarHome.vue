@@ -7,13 +7,11 @@ div
   ul.sidebar__ul
     RouterLink.sidebar__router(:to="{path:'/'}")
       li.sidebar__li
-        //- .sidebar__Cuantos 12
         .sidebar__liIcon
           InboxIcon
         .sidebar__liTexto Por Atender
     RouterLink(:to="{path:'/otra'}")
       li.sidebar__li
-        //- .sidebar__Cuantos 12
         .sidebar__liIcon
           InboxIcon
         .sidebar__liTexto Por Validar
@@ -69,20 +67,6 @@ div
       fill: white;
     }
   }
-  &__Cuantos {
-    grid-area: 'cuantos';
-    font-weight: bold;
-    right: 0px;
-    top: 0px;
-    background: #4d65df;
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-  }
   &__liTexto {
     grid-area: texto;
     font-size: 18px;
@@ -94,35 +78,13 @@ div
     font-size: 12px;
     margin-top: 6px;
   }
-  &__nombre {
-    font-size: 12px;
-    padding: 0 5px;
-    line-height: 1em;
-    margin-bottom: 4px;
-  }
-  &__cargo {
-    font-size: 10px;
-    padding: 0 5px;
-    line-height: 1em;
-    margin-bottom: 4px;
-  }
-  &__dep {
-    font-size: 12px;
-    padding: 0 5px;
-    line-height: 1em;
-  }
-  &__subdep {
-    font-size: 11px;
-    padding: 0 5px;
-    line-height: 1em;
-  }
 }
 a.router-link-exact-active li.sidebar__li {
-  /* border-right: 6px solid variables.$sidebar-active; */
+  border-right: 6px solid lightsalmon;
   width: 250px;
 }
 a.active li.sidebar__li {
-  /* border-right: 6px solid variables.$sidebar-active; */
+  border-right: 6px solid lightsalmon;
   width: 100%;
 }
 </style>

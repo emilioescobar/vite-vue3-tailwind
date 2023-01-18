@@ -1,19 +1,33 @@
-<template>
-  <div class="header">
-    <h1 class="text-3xl font-bold">Header</h1>
-  </div>
+<template lang="pug">
+div
+  .header__items 
+    .header__identificador 
+      .header__logo
+        img( alt="Vue logo" class="logo" src="@/assets/logo.svg" width="30" height="30")
+      .header__titulos 
+        .header__titulo Dashboard
+        .header__subtitulo Vite + Vue3 + Tailwind + pinia + Router + pug 
+  .header__items
+    .header__caja-links
+      .header__links
+        RouterLink(:to="{path:'/'}")
+          span Hola
+      .header__links.header__links--salir
+        RouterLink(:to="{path:'/otra'}") Salir
 </template>
 
-<script setup></script>
-
-<style lang="postcss" scoped>
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+<style lang="postcss">
 .header {
+  color: var(--color-heading);
   background-color: lightblue;
   box-shadow: 0px 0px 10px 0px rgba(1, 1, 1, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid variables.$secondary-color;
+  border-bottom: 1px solid grey;
 
   &__items {
     flex-grow: 1;
@@ -24,15 +38,11 @@
     gap: 16px;
   }
   &__logo {
-    color: variables.$text-color;
+    color: grey;
     margin-left: 0.5rem;
   }
-  &__logo img {
-    max-height: 2.4rem;
-    width: auto;
-  }
   &__titulos {
-    font-size: variables.$fs-header-titulos;
+    font-size: 18px;
     color: #777;
   }
   &__titulo {
@@ -52,7 +62,6 @@
     margin-right: 1rem;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: variables.$fs-header-salir;
 
     &--salir {
       display: flex;
@@ -60,8 +69,7 @@
       gap: 5px;
     }
     &--salir > i {
-      font-size: variables.$fs-header-salir;
-      color: variables.$text-medium;
+      color: green;
     }
   }
   &__links:hover {
