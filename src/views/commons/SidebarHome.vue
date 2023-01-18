@@ -1,7 +1,5 @@
 <script setup>
-// eslint-disable-next-line no-unused-vars
 import InboxIcon from '@/components/ui/atoms/icons/InboxIcon.vue'
-// eslint-disable-next-line no-unused-vars
 import { RouterLink } from 'vue-router'
 </script>
 <template lang="pug">
@@ -25,7 +23,7 @@ div
 
 <style lang="postcss" scoped>
 .sidebar {
-  background-color: grey;
+  background-color: brown;
   box-shadow: -2px 0px 10px 3px rgba(1, 1, 1, 0.2);
   color: white;
   display: flex;
@@ -68,8 +66,7 @@ div
     align-items: center;
     color: white;
     & svg {
-      /* fill: variables.$btn-default-color; */
-      fill: red;
+      fill: white;
     }
   }
   &__Cuantos {
@@ -92,7 +89,7 @@ div
   }
   &__version {
     text-align: center;
-    /* color: variables.$text-medium; */
+    color: white;
     padding-bottom: 1rem;
     font-size: 12px;
     margin-top: 6px;
