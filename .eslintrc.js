@@ -4,7 +4,9 @@ module.exports = {
   },
   extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'prettier'],
   rules: {
+    'vue/require-default-prop': 'off', //opcional
     // override/add rules settings here, such as:
     // 'vue/no-unused-vars': 'error'
   },
+  // parser: 'vue-eslint-parser',
 }

@@ -1,71 +1,73 @@
-<script setup></script>
-
+<script setup>
+import { RouterView } from 'vue-router'
+import SidebarHome from '@/views/commons/SidebarHome.vue'
+import HeaderView from '@/views/commons/HeaderView.vue'
+</script>
 <template>
-  <div id="app">
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <div>
+    <div class="contenedor">
+      <HeaderView class="header" />
+      <div class="main">
+        <RouterView />
+      </div>
+      <SidebarHome class="sidebar" />
+    </div>
   </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style lang="postcss">
+html,
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  height: 100%;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.contenedor {
+  margin: 0;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 250px auto;
+  grid-template-rows: 50px auto;
+  grid-template-areas:
+    'header header'
+    'sidebar main';
+  overflow: hidden;
 }
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.header {
+  grid-area: header;
 }
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.sidebar {
+  grid-area: sidebar;
 }
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.main {
+  grid-area: main;
+  height: initial;
+  overflow-y: auto !important;
 }
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
-
-nav a:first-of-type {
-  border: 0;
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+@media print {
+  html,
+  body {
+    overflow: initial !important;
+    height: initial !important;
+    background-color: #fff !important;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
+  .contenedor {
+    display: block;
+    height: initial !important;
   }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  .main {
+    width: 100%;
+    display: block !important;
   }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+  .sidebar {
+    display: none !important;
   }
 }
 </style>
